@@ -1,0 +1,56 @@
+/*NavBar*/
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header h4 {
+    display: inline-block;
+    text-align: left;
+    margin-left: 15px;
+}
+
+header ul {
+    display: inline-flex;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+header ul > li {
+    margin: 0 10px;
+}
+
+header ul > li > a{
+    color: white;
+}
+
+#seconds {
+    display: inline-block;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+button {
+    background: none !important;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 !important;
+
+}
+
+.active {
+    color: blue;
+}
+
+.levelModeActive {
+    color: springgreen;
+}
