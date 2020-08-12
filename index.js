@@ -36,19 +36,17 @@ tryAgain.addEventListener('click', () => {
 });
 
 function init () {
-    if(firstIteration) {
-        selectLevel(null);
-        selectMode(null);
-    }
-    showHighScore();
-
     score = 0;
     scoreDisplay.innerHTML = '0';
     timeDisplay.innerText = '..';
     time = null;
 
-    showWord();
-
+    if(firstIteration) {
+        selectLevel(null);
+        selectMode(null);
+    }
+    showHighScore();
+    showWordOrSentence();
     firstIteration = false;
 }
 
@@ -94,7 +92,7 @@ function selectMode(mode) {
     if(!firstIteration) init();
 }
 
-async function showWord() {
+async function showWordOrSentence() {
     if(isInSentenceMode) fetchUrl = 'https://api.quotable.io/random';
     else fetchUrl = 'https://random-word-api.herokuapp.com/word?number=1';
     let word = await fetch(fetchUrl)
@@ -144,7 +142,7 @@ function startMatch() {
     isCountdownStart = true;
     if(matchWords()) {
         time = 0;
-        showWord();
+        showWordOrSentence();
         wordInput.value = '';
         score++;
     }
