@@ -1,4 +1,3 @@
-/*NavBar*/
 header {
     display: flex;
     justify-content: space-between;
@@ -44,13 +43,14 @@ button {
     color: white;
     cursor: pointer;
     padding: 0 !important;
-
 }
 
+button:focus {outline:0;}
+
 .active {
-    color: blue;
+    color: greenyellow;
 }
 
 .levelModeActive {
-    color: springgreen;
+    color: greenyellow;
 }
